@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<title>Projeto Final - Marcelo Viani</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.min.js" type="text/javascript"></script>
+<script src="webio_mqtt.js" type="text/javascript"></script>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Style the header */
+header {
+  background-color: #666;
+  padding: 5px;
+  text-align: center;
+  font-size: 28px;
+  color: white;
+}
+
+/* Create two columns/boxes that floats next to each other */
+nav {
+  float: left;
+  width: 50%;
+   /* only for demonstration, should be removed */
+  background: #ccc;
+  padding: 20px;
+}
+
+/* Style the list inside the menu */
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+article {
+  float: left;
+  padding: 20px;
+  width: 50%;
+  background-color: #f1f1f1;
+   /* only for demonstration, should be removed */
+}
+
+/* Clear floats after the columns */
+section:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the footer */
+footer {
+  background-color: #777;
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
+
+/* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
+@media (max-width: 600px) {
+  nav, article {
+    width: 100%;
+    height: auto;
+  }
+}
+</style>
+
+<style type="text/css">
+			body	{font-family: sans-serif;}
+			table	{empty-cells: show;}
+			.temp	{background-color: 	red;}
+			.umi	{background-color: 	orange;}
+			.alt    {background-color:  yellow}
+			.lum	{background-color:	green;}
+			.sec	{background-color:	blue;}
+			.umi:before, .set_off:before	{content: "";}
+			.temp:before					{content: "";}
+
+</style>
+
+</head>
+<body>
+<header>
+	<h1>Projeto Redes 2020/2</h1>
+	<h3>Marcelo Viani</h3>
+</header>
+
+<section>
+  <nav>
+		<h1>Sensores</h1>  
+		<table>
+		<tr>
+			<td >Temperatura (Celsius)</td>
+			<td class="temp" id="temperatura"></td>
+		</tr>
+		<tr>
+			<td >Umidade do solo (%)</td>
+			<td class="umi" id="umidade"></td>
+		</tr>
+		<tr>
+			<td >Altura do drone (nm)</td>
+			<td class="alt" id="altura"></td>
+		</tr>
+		<tr>
+			<td >Luminosidade (lm)</td>
+			<td class="lum" id="luminosidade"></td>
+			</tr>
+		</table>
+   </nav>
+  
+  <article>
+    <center>
+      <h1>Tempo de Programa Aberto</h1> 
+	  	<table>
+		<tr>
+			<td class="sec" id="segundos"></td>
+			<td >Segundos</td>
+		</tr>
+		</table>
+    </center>
+  </article>
+</section>
+
+<footer>
+  <img src="http://www.florianopolis.ifsc.edu.br/templates/campi/images/marca_fpolis.png"> 
+  <p>DAELN, Departamento Acadêmico de Eletrônica - IFSC, Campus Florianópolis</p>
+</footer>
+
+</body>
+</html>
